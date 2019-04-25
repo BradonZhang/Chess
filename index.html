@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chess - Local Multiplayer</title>
+    <link rel="stylesheet" type="text/css" href="board.css" />
+  </head>
+  <body>
+
+    <div class="boardTitle"><h2>Chess</h2><h3>Local Multiplayer</h3></div>
+    <div id="board"></div>
+    <!--div id="pawnPromotionMenu">
+      <table class="pawnPromotionMenu">
+        <tr><td>Queen</td></tr>
+        <tr><td>Knight</td></tr>
+        <tr><td>Rook</td></tr>
+        <tr><td>Bishop</td></tr>
+      </table>
+    </div-->
+    <!--br /-->
+    <p><b id="turnMessage">MOVE <span id="moveNumber">1</span> - <span id="currentTurn">WHITE</span> TO MOVE<span id="checkMessage"></span></b></p>
+    <!--p id="illegalMove">Make a move...</p-->
+    <p><b>Pawn Promotes to:</b><br />
+      <label><input name="pawnPromotion" type="radio" value="queen" checked />Queen</label>
+      <label><input name="pawnPromotion" type="radio" value="knight" />Knight</label>
+      <label><input name="pawnPromotion" type="radio" value="rook" />Rook</label>
+      <label><input name="pawnPromotion" type="radio" value="bishop" />Bishop</label>
+    </p>
+    <p id="capturedPieces"><b>Captured Pieces:</b><br /></p>
+    <p><b>Move by Coordinates:</b> <input type="text" id="pos1" size="1" placeholder="e2" /><input type="text" id="pos2" size="1" placeholder="e4" /><button onclick="movePieceFromNotation(document.getElementById('pos1').value, document.getElementById('pos2').value)">Submit Move</button></p>
+    <button onclick="flipBoard()">Flip the Board</button> <label><input type="checkbox" name="autoFlip" onclick="autoFlipToggle()" />Auto-Flip</label>
+
+    <p id="aboutSite">Developed by Bradon Zhang (Firestar493)</p>
+
+    <script type="text/javascript" src="board.js"></script>
+  </body>
+</html>

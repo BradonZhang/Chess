@@ -1,0 +1,129 @@
+body {
+  font-family: Tahoma, Verdana, sans-serif;
+}
+.boardTitle {
+  width: 480px;
+  text-align: center;
+  background-color: rgb(240, 217, 181);
+  margin: 0px 0px 8px;
+  padding: 0px;
+}
+.boardTitle * {
+  margin: 2px 0px;
+  padding: 0px;
+}
+#aboutSite {
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+}
+table.board,
+table.board tr,
+table.board tr td,
+table.pawnPromotionMenu,
+table.pawnPromotionMenu tr,
+table.pawnPromotionMenu tr td  {
+  border: 0;
+  /*border: 1px solid black;*/
+  border-collapse: collapse;
+  padding: 0;
+  margin: 0;
+}
+table.board tr td,
+table.pawnPromotionMenu tr td {
+  width: 60px;
+  height: 60px;
+}
+#pawnPromotionMenu {
+  z-index: -3;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+.boardCover {
+  z-index: -2;
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  top: 8px;
+  left: 8px;
+}
+/* CONTINUE WORKING HERE FOR PAWN PROMOTION MENU*/
+#capturedPieces img {
+  display: inline;
+}
+/* Light square background */
+table.board tr:nth-child(odd) td:nth-child(odd),
+table.board tr:nth-child(even) td:nth-child(even) {
+  background-color: rgb(240, 217, 181);
+}
+/* Dark square background */
+table.board tr:nth-child(odd) td:nth-child(even),
+table.board tr:nth-child(even) td:nth-child(odd) {
+  background-color: rgb(181, 136, 99);
+}
+table.board tr td.checked {
+  background-image: radial-gradient(ellipse at center, rgba(255, 0, 0, 1) 0%, rgba(231, 0, 0, 1) 25%, rgba(169, 0, 0, 0) 89%, rgba(158, 0, 0, 0) 100%);
+}
+table.board tr:nth-child(odd) td:nth-child(odd).selectedSquare,
+table.board tr:nth-child(even) td:nth-child(even).selectedSquare {
+  background-color: rgb(130, 151, 105);
+}
+table.board tr:nth-child(odd) td:nth-child(even).selectedSquare,
+table.board tr:nth-child(even) td:nth-child(odd).selectedSquare,
+table.board tr:nth-child(odd) td:nth-child(even).legalMove:hover,
+table.board tr:nth-child(even) td:nth-child(odd).legalMove:hover {
+  background-color: rgb(100, 111, 64);
+}
+table.board tr:nth-child(odd) td:nth-child(odd).legalMove:hover,
+table.board tr:nth-child(even) td:nth-child(even).legalMove:hover {
+  background-color: rgb(174, 177, 135);
+}
+table.board tr:nth-child(odd) td:nth-child(even).legalMove:hover,
+table.board tr:nth-child(even) td:nth-child(odd).legalMove:hover {
+  background-color: rgb(132, 121, 78);
+}
+table.board tr:nth-child(odd) td:nth-child(odd).legalMove,
+table.board tr:nth-child(even) td:nth-child(even).legalMove {
+  background-image: url(img/lightSquareLegal.png);
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  cursor: pointer;
+}
+table.board tr:nth-child(odd) td:nth-child(even).legalMove,
+table.board tr:nth-child(even) td:nth-child(odd).legalMove {
+  background-image: url(img/darkSquareLegal.png);
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+  cursor: pointer;
+}
+table.board tr:nth-child(odd) td:nth-child(odd).legalCapture,
+table.board tr:nth-child(even) td:nth-child(even).legalCapture {
+  background-image: url(img/lightSquareCapture.png);
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+}
+table.board tr:nth-child(odd) td:nth-child(even).legalCapture,
+table.board tr:nth-child(even) td:nth-child(odd).legalCapture {
+  background-image: url(img/darkSquareCapture.png);
+  background-repeat: no-repeat;
+  background-size: 60px 60px;
+}
+table.board tr:nth-child(odd) td:nth-child(odd).lastMove,
+table.board tr:nth-child(even) td:nth-child(even).lastMove {
+  background-color: rgb(205, 210, 106);
+}
+table.board tr:nth-child(odd) td:nth-child(even).lastMove,
+table.board tr:nth-child(even) td:nth-child(odd).lastMove {
+  background-color: rgb(170, 162, 58);
+}
+/*table.board tr:nth-child(odd) td:nth-child(odd).lastMove,
+table.board tr:nth-child(even) td:nth-child(even).lastMove,
+table.board tr:nth-child(odd) td:nth-child(even).lastMove,
+table.board tr:nth-child(even) td:nth-child(odd).lastMove {
+  background-color: rgba(155, 199, 0, 0.41);
+}*/
+img.piece {
+  display: block;
+  cursor: pointer;
+}
